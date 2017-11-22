@@ -31,11 +31,13 @@ d3.json("iceland_regions.topo.json", function(error, data) {
 	.on('mouseout', function(d) {
 		d3.select(this).attr("fill","#31ff2f")
 	})	
-	
+	.on('click', function(d){	
+
+		d3.select(this).attr("fill",randColor);
+	})
 });
 
-
-
+	
 	var xAndYCalculator = d3.geoAlbers()
 		.translate([width / 2, height / 2])
 		.center([-1.0, 65])
