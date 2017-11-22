@@ -37,7 +37,16 @@ d3.json("iceland_regions.topo.json", function(error, data) {
 	})
 });
 
-	
+	function randColor(){
+		var r = Math.floor(Math.random()*256);
+		var g = Math.floor(Math.random()*256);
+		var b = Math.floor(Math.random()*256);
+
+		var color = 'rgb(' + r + ',' + g + ',' + b + ')';
+		console.log(color);
+		return color;
+	}
+
 	var xAndYCalculator = d3.geoAlbers()
 		.translate([width / 2, height / 2])
 		.center([-1.0, 65])
