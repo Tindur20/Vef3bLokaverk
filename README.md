@@ -1,2 +1,2 @@
-# vef3bLokaverkefni
-# Vef3bLokaverk
+# vef3b Lokaverkefni
+
