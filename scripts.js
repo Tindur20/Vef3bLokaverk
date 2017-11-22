@@ -10,7 +10,6 @@ var svg = d3.select("body").append("svg")
 
 d3.json("iceland_regions.topo.json", function(error, data) {
 	var subunits = topojson.feature(data, data.objects.regions);
-	console.log(subunits);
 	var projection = d3.geoAlbers()
     .center([-1.0, 65])
     .rotate([18, 0])
@@ -56,15 +55,16 @@ d3.json("iceland_regions.topo.json", function(error, data) {
 		.center([-1.0, 65])
     	.rotate([18, 0])
     	.parallels([50, 60])
-		.scale(200)
+		.scale(6950)
+
 
 d3.csv("capitals.csv", function(error,capitals){
-	svg.selectAll(".city-circle")
+		svg.selectAll(".city-circle")
 		.data(capitals)
 		.enter()
 		.append("circle")
 		.attr("fill", "black")
-		.attr("r", 2)
+		.attr("r", 3)
 		.attr("cx", function(d) {
 			var coords = xAndYCalculator([d.long,d.lat])	
 			return coords[0];
