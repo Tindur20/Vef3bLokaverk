@@ -25,15 +25,19 @@ d3.json("iceland_regions.topo.json", function(error, data) {
     .enter().append("path")
 	.attr("class", function(d) { return "subunit"; })
 	.attr("d", path)
-	.on('mouseover', function(d) {
+	/*.on('mouseover', function(d) {
 		d3.select(this).attr("fill", "yellow")
 	})
 	.on('mouseout', function(d) {
 		d3.select(this).attr("fill","#31ff2f")
-	})	
-	.on('click', function(d){	
+	})	*/
+	.on('mousedown', function(d){	
+		d3.select(this).attr("fill",randColor);	
+	})		
+	.on('mouseup', function(d){	
+		wait(300);
+		d3.select(this).attr("fill","#31ff2f");	
 
-		d3.select(this).attr("fill",randColor);
 	})
 });
 
@@ -73,3 +77,10 @@ d3.csv("capitals.csv", function(error,capitals){
 })
 
 
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
