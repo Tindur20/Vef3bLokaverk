@@ -33,7 +33,7 @@ d3.json("iceland_regions.topo.json", function(error, data) {
 	})	
 	.on('click', function(d){	
 
-		d3.select(this).attr("fill","blue");
+		d3.select(this).attr("fill",randColor);
 	})
 });
 
