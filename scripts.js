@@ -57,14 +57,21 @@ d3.json("iceland_regions.topo.json", function(error, data) {
     	.parallels([50, 60])
 		.scale(6950)
 
+d3.json("towns.json", function(error,town){
+	console.log(town);
+	svg.selectAll("")
+		var towns  = topojson.feature(data,data.features);
+
+})
+
 
 d3.csv("capitals.csv", function(error,capitals){
 		svg.selectAll(".city-circle")
 		.data(capitals)
-		.enter()
-		.append("circle")
+		.enter().append("circle")
+		.attr("class", function(d) { return "city-circle"; })
 		.attr("fill", "black")
-		.attr("r", 3)
+		.attr("r", 5)
 		.attr("cx", function(d) {
 			var coords = xAndYCalculator([d.long,d.lat])	
 			return coords[0];
@@ -73,8 +80,21 @@ d3.csv("capitals.csv", function(error,capitals){
 			var coords = xAndYCalculator([d.long,d.lat])
 			return coords[1];
 		})
+		.on('mouseover', function(d) {
+			svg.selectAll(".gogn")
+			.data(capitals)
+			.enter().append("div")
+			.attr("class", function(d){ return "gogn"})
+			.attr("fill", "#efefef")
+			.attr("width", 200)
+    		.attr("height", 200)
+    		console.log("Something happend");
 
-})
+		})
+		.on('mouseout', function(d) {
+			d3.select(this).attr("r","5")
+		})
+});
 
 
 function wait(ms){
