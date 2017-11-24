@@ -81,21 +81,36 @@ d3.csv("capitals.csv", function(error,capitals){
 			return coords[1];
 		})
 		.on('mouseover', function(d) {
-			svg.selectAll(".gogn")
+			div.transition()
+				.duration(1500)	
+				.style("opacity", 0.9)
+				.style("background","lightsteelblue")
+			div.html("City: " + d.name + "</br> " + "Population: " + d.population)
+				.style("opacity", 0.9)
+				.style("left",(d3.event.pageX - 35) + "px")
+				.style("top",(d3.event.pageY - 30)  + "px")    		
+		})
+		.on('mouseout', function(d) {
+			div.transition()
+				.duration(2000)
+				.style('opacity', 0)
+        		
+		})
+});
+
+var div = d3.select("body").append("div")
+	.style("position","absolute")
+	.style("padding","0 10px")
+	.style("opacity", 0)
+	.attr("class", "tooltip")
+/*
+svg.selectAll(".gogn")
 			.data(capitals)
 			.enter().append("div")
 			.attr("class", function(d){ return "gogn"})
 			.attr("fill", "#efefef")
 			.attr("width", 200)
-    		.attr("height", 200)
-    		console.log("Something happend");
-
-		})
-		.on('mouseout', function(d) {
-			d3.select(this).attr("r","5")
-		})
-});
-
+    		.attr("height", 200)*/
 
 function wait(ms){
    var start = new Date().getTime();
