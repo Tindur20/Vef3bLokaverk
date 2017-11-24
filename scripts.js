@@ -103,14 +103,7 @@ var div = d3.select("body").append("div")
 	.style("padding","0 10px")
 	.style("opacity", 0)
 	.attr("class", "tooltip")
-/*
-svg.selectAll(".gogn")
-			.data(capitals)
-			.enter().append("div")
-			.attr("class", function(d){ return "gogn"})
-			.attr("fill", "#efefef")
-			.attr("width", 200)
-    		.attr("height", 200)*/
+
 
 function wait(ms){
    var start = new Date().getTime();
