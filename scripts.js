@@ -111,7 +111,7 @@ function wait(ms){
      end = new Date().getTime();
   }
 }
-//þetta átti að geta zoomað inn og út eftir 750 mili sec
+//þetta átti að geta zoomað inn og út. (virkar ekki)
 function clicked(d) {
 	 var x, y, k;
 
