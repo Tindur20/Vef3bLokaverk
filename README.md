@@ -18,6 +18,7 @@ Stundum þarftu að refresh-a síðuna nokkrum sinnum þanning að púnktarnir(s
 Láta zoom og drag function-inn virka og síðan að gera ýtt á einn hlut á kortinu og þá hverfur allt hitt.
 
 # Hér er miðlar sem ég notaði við þetta verkefni
+## Ég notaði fleyri miðla við verkefnið. Man ekki hvaða síðunur sem ég notaði
 [linkur 1](https://stackoverflow.com/questions/16256454/d3-js-position-tooltips-using-element-position-not-mouse-position) Þetta hjálpaði eitthvað en ekki jafn mikið og næsti línkur                                                                                               
 [linkur 2](http://bl.ocks.org/d3noob/a22c42db65eb00d4e369) Þessi linkur hjálpaði mér mikið að geta byrt gögn á púnkti                     
 
